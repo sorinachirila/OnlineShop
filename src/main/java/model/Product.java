@@ -2,6 +2,8 @@ package model;
 
 public class Product {
 
+    //test purpose
+
     private int id;
     private String name;
     private double price;
