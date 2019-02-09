@@ -35,4 +35,5 @@ public class Stock {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
 }
