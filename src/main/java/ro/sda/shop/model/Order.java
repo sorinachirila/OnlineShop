@@ -10,14 +10,6 @@ public class Order {
     private boolean isDelivered;
     private Client client;
 
-    public Order(int orderNumber, List<Product> orderproduct, int finalPrice, boolean isDelivered, Client client) {
-        this.orderNumber = orderNumber;
-        this.orderproduct = orderproduct;
-        this.finalPrice = finalPrice;
-        this.isDelivered = isDelivered;
-        this.client = client;
-    }
-
     public int getOrderNumber() {
         return orderNumber;
     }

@@ -1,57 +1,50 @@
 package ro.sda.shop.model;
 
 public class Client {
-    private boolean accout;
-    private String userName;
-    private int idClient;
-    private String password;
-    private String orders;
+    private long id;
+    private String name;
+    private String phoneNumber;
+    private String socialId;
+    private String address;
 
-    public boolean isAccout() {
-        return accout;
+    public long getId() {
+        return id;
     }
 
-    public void setAccout(boolean accout) {
-        this.accout = accout;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getIdClient() {
-        return idClient;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setIdClient(int idClient) {
-        this.idClient = idClient;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getPassword() {
-        return password;
+    public String getSocialId() {
+        return socialId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setSocialId(String socialId) {
+        this.socialId = socialId;
     }
 
-    public String getOrders() {
-        return orders;
+    public String getAddress() {
+        return address;
     }
 
-    public void setOrders(String orders) {
-        this.orders = orders;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
-    public Client(boolean accout, String userName, int idClient, String password, String orders) {
-        this.accout = accout;
-        this.userName = userName;
-        this.idClient = idClient;
-        this.password = password;
-        this.orders = orders;
-    }
 }

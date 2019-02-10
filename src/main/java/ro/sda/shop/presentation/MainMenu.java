@@ -20,12 +20,16 @@ public class MainMenu extends AbstractMenu {
                 break;
             case 2:
                 System.out.println("Clients menu");
+                ClientMenu client = new ClientMenu();
+                client.displayMenu();
                 break;
             case 3:
-                System.out.println("order menu");
+                System.out.println("Order menu");
+                OrderMenu order = new OrderMenu();
+                order.displayMenu();
                 break;
             case 0:
-                System.out.println("Exiting");
+                System.out.println("Exiting...");
                 break;
             default:
                 System.out.println("Invalid option");
