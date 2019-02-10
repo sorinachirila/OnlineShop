@@ -3,14 +3,9 @@ package ro.sda.shop.model;
 public class Stock {
 
     private int idStock;
-    private Product produs;
+    private Product product;
     private int quantity;
-
-    public Stock(int idStock, Product produs, int quantity) {
-        this.idStock = idStock;
-        this.produs = produs;
-        this.quantity = quantity;
-    }
+    private String location;
 
     public int getIdStock() {
         return idStock;
@@ -20,12 +15,12 @@ public class Stock {
         this.idStock = idStock;
     }
 
-    public Product getProdus() {
-        return produs;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProdus(Product produs) {
-        this.produs = produs;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -36,4 +31,11 @@ public class Stock {
         this.quantity = quantity;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

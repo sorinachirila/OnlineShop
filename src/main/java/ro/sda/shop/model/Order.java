@@ -1,21 +1,36 @@
 package ro.sda.shop.model;
 
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class Order {
-    private int orderNumber;
-    private List<Product> orderproduct;
-    private int finalPrice;
-    private boolean isDelivered;
-    private Client client;
 
-    public int getOrderNumber() {
-        return orderNumber;
+
+    private int id;
+    private Client client;
+    private List<Product> orderproduct;
+    private Double finalPrice;
+    private enum orderStatus {placed, accepted, payed, delivered, canceld}
+    private Timestamp timestamp;
+
+    public Order() {
     }
 
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public List<Product> getOrderproduct() {
@@ -26,28 +41,20 @@ public class Order {
         this.orderproduct = orderproduct;
     }
 
-    public int getFinalPrice() {
+    public Double getFinalPrice() {
         return finalPrice;
     }
 
-    public void setFinalPrice(int finalPrice) {
+    public void setFinalPrice(Double finalPrice) {
         this.finalPrice = finalPrice;
     }
 
-    public boolean isDelivered() {
-        return isDelivered;
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
-    public void setDelivered(boolean delivered) {
-        isDelivered = delivered;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }
 
