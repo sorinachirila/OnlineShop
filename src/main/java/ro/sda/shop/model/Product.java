@@ -1,4 +1,4 @@
-package model;
+package ro.sda.shop.model;
 
 public class Product {
 

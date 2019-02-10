@@ -1,4 +1,4 @@
-package model;
+package ro.sda.shop.model;
 
 
 import java.util.List;

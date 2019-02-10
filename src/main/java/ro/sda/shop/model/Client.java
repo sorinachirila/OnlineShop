@@ -1,4 +1,4 @@
-package model;
+package ro.sda.shop.model;
 
 public class Client {
     private boolean accout;
