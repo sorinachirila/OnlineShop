@@ -5,8 +5,6 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class Order {
-
-
     private Integer id;
     private Client client;
     private List<Product> orderedProducts;

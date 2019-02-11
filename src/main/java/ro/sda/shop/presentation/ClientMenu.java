@@ -10,6 +10,7 @@ public class ClientMenu extends AbstractMenu {
     ClientReader reader = new ClientReader();
     ClientWriter writer = new ClientWriter();
 
+
     protected void displayOptions() {
         System.out.println("1 - View all clients");
         System.out.println("2 - View client details");
