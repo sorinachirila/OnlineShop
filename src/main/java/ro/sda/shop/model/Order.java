@@ -7,21 +7,29 @@ import java.util.List;
 public class Order {
 
 
-    private int id;
+    private Integer id;
     private Client client;
-    private List<Product> orderproduct;
-    private Double finalPrice;
-    private enum orderStatus {placed, accepted, payed, delivered, canceld}
+    private List<Product> orderedProducts;
+    private Double actualPrice;
+    private OrderStatus orderStatus;
     private Timestamp timestamp;
 
     public Order() {
     }
+ /*   public Order(Integer id, Client client, List<Product> orderedProducts, Double actualPrice, OrderStatus orderStatus, Timestamp timestamp) {
+        this.id = id;
+        this.client = client;
+        this.orderedProducts = orderedProducts;
+        this.actualPrice = actualPrice;
+        this.orderStatus = orderStatus;
+        this.timestamp = timestamp;
+    }*/
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,20 +41,28 @@ public class Order {
         this.client = client;
     }
 
-    public List<Product> getOrderproduct() {
-        return orderproduct;
+    public List<Product> getOrderedProducts() {
+        return orderedProducts;
     }
 
-    public void setOrderproduct(List<Product> orderproduct) {
-        this.orderproduct = orderproduct;
+    public void setOrderedProducts(List<Product> orderedProducts) {
+        this.orderedProducts = orderedProducts;
     }
 
-    public Double getFinalPrice() {
-        return finalPrice;
+    public Double getActualPrice() {
+        return actualPrice;
     }
 
-    public void setFinalPrice(Double finalPrice) {
-        this.finalPrice = finalPrice;
+    public void setActualPrice(Double actualPrice) {
+        this.actualPrice = actualPrice;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     public Timestamp getTimestamp() {

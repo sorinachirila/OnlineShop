@@ -4,24 +4,26 @@ public class Product {
 
     //test purpose
 
-    private int id;
+    private Integer id;
     private String name;
     private Double price;
+    private String description;
 
     public Product() {
     }
 
-    public Product(int id, String name, double price) {
+   /* public Product(Integer id, String name, Double price, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
-    }
+        this.description = description;
+    }*/
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,11 +35,19 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
