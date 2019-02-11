@@ -44,8 +44,8 @@ public class ClientDAO implements GenericDAO<Client> {
             if (client.getId().equals(id)) {
                 deletedClient = client;
             }
-            clients.remove(deletedClient);
-        }
+
+        }clients.remove(deletedClient);
 
     }
 
