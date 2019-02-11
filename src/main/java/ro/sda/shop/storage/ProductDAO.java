@@ -14,7 +14,6 @@ public class ProductDAO implements GenericDAO<Product> {
     }
 
     public void update(Product value) {
-
     }
 
     public Product add(Product value) {
