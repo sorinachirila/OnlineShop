@@ -11,9 +11,9 @@ public class ClientReader implements ConsoleReader<Client> {
         System.out.print("Name: ");
         String name = scanner.nextLine();
         System.out.println("Address: ");
-        String adress = scanner.nextLine();
+        String address = scanner.nextLine();
         client.setName(name);
-        client.setAddress(adress);
+        client.setAddress(address);
         return client;
     }
 }

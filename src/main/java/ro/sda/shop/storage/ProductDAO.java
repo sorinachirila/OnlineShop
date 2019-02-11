@@ -1,4 +1,4 @@
-package ro.sda.shop.Storage;
+package ro.sda.shop.storage;
 
 import ro.sda.shop.model.Product;
 

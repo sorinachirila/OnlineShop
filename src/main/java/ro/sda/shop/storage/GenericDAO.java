@@ -1,6 +1,4 @@
-package ro.sda.shop.Storage;
-
-import ro.sda.shop.model.Client;
+package ro.sda.shop.storage;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package ro.sda.shop.presentation;
 
-import ro.sda.shop.Storage.ClientDAO;
+import ro.sda.shop.storage.ClientDAO;
 import ro.sda.shop.model.Client;
 
 import java.util.Scanner;
