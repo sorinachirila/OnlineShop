@@ -4,7 +4,7 @@ public class Product {
 
     //test purpose
 
-    private Integer id;
+    private Long id;
     private String name;
     private Double price;
     private String description;
@@ -19,11 +19,11 @@ public class Product {
         this.description = description;
     }*/
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

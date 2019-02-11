@@ -1,0 +1,22 @@
+package ro.sda.shop.presentation;
+
+import ro.sda.shop.model.Product;
+
+import java.util.Scanner;
+
+public class ProductReader implements ConsoleReader<Product> {
+    public Product read() {
+        Product product = new Product();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.println("Price: ");
+        Double price = scanner.nextDouble();
+        System.out.print("Description: ");
+        String description = scanner.nextLine();
+        product.setName(name);
+        product.setPrice(price);
+        product.setDescription(description);
+        return product;
+    }
+}

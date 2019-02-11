@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientDAO implements GenericDAO<Client> {
-    //1.d.
+    //1.d. static
     static List<Client> clients = new ArrayList<Client>();
 
     public List<Client> findAll() {
@@ -47,7 +47,6 @@ public class ClientDAO implements GenericDAO<Client> {
             }
         }
         clients.remove(deletedClient);
-
     }
 
     private Long generateNewId() {
