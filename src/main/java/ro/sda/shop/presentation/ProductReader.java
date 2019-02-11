@@ -10,13 +10,13 @@ public class ProductReader implements ConsoleReader<Product> {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Name: ");
         String name = scanner.nextLine();
-        System.out.println("Price: ");
-        Double price = scanner.nextDouble();
         System.out.print("Description: ");
         String description = scanner.nextLine();
+        System.out.println("Price: ");
+        Double price = scanner.nextDouble();
         product.setName(name);
-        product.setPrice(price);
         product.setDescription(description);
+        product.setPrice(price);
         return product;
     }
 }

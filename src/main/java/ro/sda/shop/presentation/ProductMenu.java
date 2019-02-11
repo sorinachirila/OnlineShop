@@ -1,7 +1,15 @@
 package ro.sda.shop.presentation;
 
 
+import ro.sda.shop.model.Product;
+import ro.sda.shop.storage.ProductDAO;
+
+import java.util.Scanner;
+
 public class ProductMenu extends AbstractMenu {
+    ProductDAO productDAO = new ProductDAO();
+    ProductReader reader = new ProductReader();
+    ProductWriter writer = new ProductWriter();
 
     protected void displayOptions() {
         System.out.println("1 - View all products");
@@ -16,19 +24,23 @@ public class ProductMenu extends AbstractMenu {
     protected void executeCmd(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of products");
+                writer.writeAll(productDAO.findAll());
                 break;
             case 2:
                 System.out.println("Product details are: ");
+                displayProductDetails();
                 break;
             case 3:
-                System.out.println("Edit product");
+                editPrice();
                 break;
             case 4:
-                System.out.println("Add a new product here: ");
+                Product newProduct = reader.read();
+                productDAO.add(newProduct);
                 break;
             case 5:
                 System.out.println("Select product to delete: ");
+                Long id = new Scanner(System.in).nextLong();
+                productDAO.deleteById(id);
                 break;
             case 0:
                 System.out.println("Exiting to main menu");
@@ -37,5 +49,23 @@ public class ProductMenu extends AbstractMenu {
                 System.out.println("Invalid option");
 
         }
+    }
+
+    private void editPrice() {
+        System.out.println("Select product to edit: ");
+        Long id = new Scanner(System.in).nextLong();
+        System.out.println("Enter new price: ");
+        Double price = new Scanner(System.in).nextDouble();
+        Product product = productDAO.findById(id);
+        product.setPrice(price);
+        productDAO.update(product);
+    }
+
+    private void displayProductDetails() {
+            System.out.println("Choose product by id: ");
+            Scanner scanner = new Scanner(System.in);
+            Long id = scanner.nextLong();
+            Product searchedProduct = productDAO.findById(id);
+            writer.write(searchedProduct);
     }
 }

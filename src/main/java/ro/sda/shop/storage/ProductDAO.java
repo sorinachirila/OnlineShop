@@ -6,11 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO implements GenericDAO<Product> {
-    private static List<Product> products;
-
-    public ProductDAO() {
-        products = new ArrayList<Product>();
-    }
+    static List<Product> products = new ArrayList<Product>();;
 
     public List<Product> findAll() {
         return products;

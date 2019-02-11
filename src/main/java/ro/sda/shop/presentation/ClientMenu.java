@@ -63,7 +63,7 @@ public class ClientMenu extends AbstractMenu {
         System.out.println("Choose client by id: ");
         Scanner scanner = new Scanner(System.in);
         Long id = scanner.nextLong();
-        Client serchedClient = clientDAO.findById(id);
-        writer.write(serchedClient);
+        Client searchedClient = clientDAO.findById(id);
+        writer.write(searchedClient);
     }
 }
