@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class Order {
-    private Integer id;
+    private Long id;
     private Client client;
     private List<Product> orderedProducts;
     private Double actualPrice;
@@ -23,11 +23,11 @@ public class Order {
         this.timestamp = timestamp;
     }*/
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
