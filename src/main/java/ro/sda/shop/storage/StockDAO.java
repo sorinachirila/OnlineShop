@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StockDAO implements GenericDAO<Stock> {
-<<<<<<< HEAD
     static List<Stock> stockList = new ArrayList<Stock>();
 
     public List<Stock> findAll() {
@@ -14,18 +13,7 @@ public class StockDAO implements GenericDAO<Stock> {
     }
 
     public Stock findById(Long id) {
-        for (Stock stock : stockList) {
-=======
-
-    static List<Stock> stocks = new ArrayList<Stock>();
-
-    public List<Stock> findAll() {
-        return stocks;
-    }
-
-    public Stock findById(Long id) {
-        for (Stock stock : stocks) {
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
+        for (Stock stock : stockList){
             if (stock.getId().equals(id)) {
                 return stock;
             }
@@ -36,65 +24,37 @@ public class StockDAO implements GenericDAO<Stock> {
     public void update(Stock stock) {
         delete(stock);
         add(stock);
-<<<<<<< HEAD
-=======
-
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
     }
 
     public Stock add(Stock stock) {
         if (stock.getId() == null) {
             stock.setId(generateNewId());
         }
-<<<<<<< HEAD
         stockList.add(stock);
-=======
-        stocks.add(stock);
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
         return stock;
     }
 
     public void delete(Stock stock) {
         deleteById(stock.getId());
-<<<<<<< HEAD
-=======
-
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
     }
 
     public void deleteById(Long id) {
         Stock deletedStock = null;
-<<<<<<< HEAD
         for (Stock stock : stockList) {
-=======
-        for (Stock stock : stocks) {
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
             if (stock.getId().equals(id)) {
                 deletedStock = stock;
             }
         }
-<<<<<<< HEAD
         stockList.remove(deletedStock);
     }
 
-    private Long generateNewId() {
-=======
-        stocks.remove(deletedStock);
-    }
-
-
     private long generateNewId() {
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
         return findMaxId() + 1;
     }
 
     private Long findMaxId() {
         Long max = -1L;
-<<<<<<< HEAD
         for (Stock stock : stockList) {
-=======
-        for (Stock stock : stocks) {
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
             if (max < stock.getId()) {
                 max = stock.getId();
             }
@@ -102,7 +62,4 @@ public class StockDAO implements GenericDAO<Stock> {
         return max;
     }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 0683974cb18fd9d2f8fd5fde9f8c11ebe32fea68
