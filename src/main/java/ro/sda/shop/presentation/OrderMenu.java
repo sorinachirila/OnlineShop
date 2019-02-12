@@ -1,6 +1,15 @@
 package ro.sda.shop.presentation;
 
+import ro.sda.shop.model.Order;
+import ro.sda.shop.storage.OrderDAO;
+
+import java.util.Scanner;
+
 public class OrderMenu extends AbstractMenu {
+    OrderDAO orderDAO = new OrderDAO();
+    OrderReader reader = new OrderReader();
+    OrderWriter writer = new OrderWriter();
+
     protected void displayOptions() {
         System.out.println("1 - View all orders");
         System.out.println("2 - View order details");
@@ -13,19 +22,22 @@ public class OrderMenu extends AbstractMenu {
     protected void executeCmd(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of orders");
+                writer.writeAll(orderDAO.findAll());
                 break;
             case 2:
-                System.out.println("Order details are: ");
+                displayOrderDetails();
                 break;
             case 3:
-                System.out.println("Edit order");
+                editActualPrice();
                 break;
             case 4:
-                System.out.println("Add a new order here: ");
+                Order newOrder = reader.read();
+                orderDAO.add(newOrder);
                 break;
             case 5:
-                System.out.println("Select order to delete: ");
+                System.out.println("Select order, by id, to delete: ");
+                Long id = new Scanner(System.in).nextLong();
+                orderDAO.deleteById(id);
                 break;
             case 0:
                 System.out.println("Exiting to main menu");
@@ -34,5 +46,23 @@ public class OrderMenu extends AbstractMenu {
                 System.out.println("Invalid option");
 
         }
+    }
+
+    private void editActualPrice() {
+        System.out.println("Select order, by id, to edit: ");
+        Long id = new Scanner(System.in).nextLong();
+        System.out.println("Enter new actual price: ");
+        Double actualPrice = new Scanner(System.in).nextDouble();
+        Order order = orderDAO.findById(id);
+        order.setActualPrice(actualPrice);
+        orderDAO.update(order);
+    }
+
+    private void displayOrderDetails() {
+        System.out.println("Choose order, by id: ");
+        Scanner scanner = new Scanner(System.in);
+        Long id = scanner.nextLong();
+        Order searchedOrder = orderDAO.findById(id);
+        writer.write(searchedOrder);
     }
 }

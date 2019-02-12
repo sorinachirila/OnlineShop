@@ -7,6 +7,7 @@ import java.util.List;
 
 public class OrderDAO implements GenericDAO<Order> {
     static List<Order> orders = new ArrayList<Order>();
+
     public List<Order> findAll() {
         return orders;
     }
@@ -34,7 +35,6 @@ public class OrderDAO implements GenericDAO<Order> {
     }
     public void delete(Order order) {
         deleteById(order.getId());
-
     }
 
     public void deleteById(Long id) {
