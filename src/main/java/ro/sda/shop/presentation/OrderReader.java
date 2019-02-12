@@ -20,10 +20,7 @@ public class OrderReader implements ConsoleReader<Order> {
         ClientReader clientReader = new ClientReader();
         Client client = clientReader.read();
         System.out.println("List of products: ");
-        List<Product> listOfProducts = new ArrayList<Product>();
-        ProductReader productReader = new ProductReader();
-        Product product = productReader.read();
-        listOfProducts.add(product);
+        List<Product> listOfProducts = getProducts();
         System.out.println("Order status(accepted, placed, payed, delivered, canceled): ");
         String orderStat = scanner.nextLine().toUpperCase();
         System.out.print("Actual price: ");
@@ -34,5 +31,15 @@ public class OrderReader implements ConsoleReader<Order> {
         order.setActualPrice(actualPrice);
         order.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         return order;
+    }
+
+    private List<Product> getProducts() {
+        List<Product> listOfProducts = new ArrayList<Product>();
+        ProductReader productReader = new ProductReader();
+        Product product1 = productReader.read();
+        Product product2 = productReader.read();
+        listOfProducts.add(product1);
+        listOfProducts.add(product2);
+        return listOfProducts;
     }
 }
