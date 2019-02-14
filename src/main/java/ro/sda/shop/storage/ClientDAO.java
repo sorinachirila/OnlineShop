@@ -14,6 +14,9 @@ public class ClientDAO implements GenericDAO<Client> {
     }
 
     public Client findById(Long id) {
+        if(clients.size() == 0){
+            throw new RuntimeException();
+        }
         for (Client client : clients) {
             if (client.getId().equals(id)) {
                 return client;
@@ -23,6 +26,9 @@ public class ClientDAO implements GenericDAO<Client> {
     }
 
     public void update(Client client) {
+        if(clients.size() == 0){
+            throw new RuntimeException();
+        }
         delete(client);
         add(client);
     }
@@ -36,6 +42,9 @@ public class ClientDAO implements GenericDAO<Client> {
     }
 
     public void delete(Client client) {
+        if(clients.size() == 0){
+            throw new RuntimeException();
+        }
         deleteById(client.getId());
     }
 

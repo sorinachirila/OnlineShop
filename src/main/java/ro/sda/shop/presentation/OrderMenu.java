@@ -1,11 +1,15 @@
 package ro.sda.shop.presentation;
 
 import ro.sda.shop.model.Order;
+import ro.sda.shop.storage.ClientDAO;
 import ro.sda.shop.storage.OrderDAO;
+import ro.sda.shop.storage.ProductDAO;
 
 import java.util.Scanner;
 
 public class OrderMenu extends AbstractMenu {
+//    ClientDAO clientDAO = new ClientDAO();
+//    ProductDAO productDAO = new ProductDAO();
     OrderDAO orderDAO = new OrderDAO();
     OrderReader reader = new OrderReader();
     OrderWriter writer = new OrderWriter();
